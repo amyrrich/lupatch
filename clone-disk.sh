@@ -29,11 +29,12 @@ if [ "X${PROC}" = 'Xsparc' ]; then
   /usr/sbin/eeprom 'diag-switch?=false'
 fi
 
-# create the pca directory so there's a place to download patches
-mkdir -p /install/data/patches
-
 # Location of the patchdiag.xref file
 XREFDIR="/install/data/patches"
+
+# create the pca directory so there's a place to download patches
+mkdir -p "${XREFDIR}"
+
 
 if [ ! -s "${XREFDIR}/patchdiag.xref" ]; then
   echo
